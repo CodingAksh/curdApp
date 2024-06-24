@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/navbar')%>
+
+        <div class="container mt-5">
+            <form action="/create" method="post">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Post Title</label>
+                    <input type="text" class="form-control" id="title" name="title">
+
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Post description</label>
+                    <input type="text" class="form-control" id="desc" name="desc">
+                </div>
+
+                <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+        </div>  
+        <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

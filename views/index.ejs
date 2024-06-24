@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+    <%- include('./partials/navbar')%>
+        <div class="container mt-5">
+            <h1>Create your post And share it</h1>
+
+            <button type="button" class="btn btn-primary mt-5"><a style="text-decoration: none; color: white;"
+                    href="/create">Create A Post </></button>
+        </div>
+
+        <div class="container">
+            <div class="cardContainer">
+                <% if (items.length> 0) { %>
+                    <% items.forEach(item=> { %>
+
+
+                        <div class="card cardStyle" style="width: 18rem; margin-top: 40px;">
+                            <div class="card-body">
+                                <h3 style="color: #444;">
+                                    <%= item.title %>
+                                </h3>
+                                <p class="card-subtitle mb-2 text-body-secondary">
+                                    <%= item.desc %>
+                                </p>
+                                <div class="btns">
+                                    <form action="/delete/<%= item.id %>" method="post">
+                                        <button type="submit" class="btn btn-dark mt-4 mx-3">Delete </button>
+                                    </form>
+                                    <button type="button" class="btn btn-warning mt-4"> <a href="/edit/<%= item.id %>">
+                                            Edit
+                                        </a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <% }) %>
+                            <% } else { %>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <ul class="list-group">
+                <h5 class="list-group-item">no post </h5>
+            </ul>
+        </div>
+        <% }%>
+
+            <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

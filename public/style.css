@@ -1,0 +1,24 @@
+.cardContainer{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+}
+
+.cardContainer .cardStyle{
+    display: flex;
+    justify-content: center;
+
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+    button{
+        padding: 10px 20px;
+    }
+}
